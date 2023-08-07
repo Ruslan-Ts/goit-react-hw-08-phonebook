@@ -7,7 +7,7 @@ import { selectContacts } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 
-const App = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const { contactsArr, isLoading, error } = useSelector(selectContacts);
 
@@ -35,4 +35,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Contacts;
