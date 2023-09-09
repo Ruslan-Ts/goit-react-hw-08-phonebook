@@ -1,11 +1,10 @@
-import { Container } from './App.styled';
 import ContactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactsList from 'components/ContactsList/ContactsList';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -16,7 +15,7 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <div>
       <h1>PhoneBook</h1>
       <ContactForm />
 
@@ -31,7 +30,7 @@ const Contacts = () => {
         )}
         {contactsArr.length > 0 && <ContactsList />}
       </div>
-    </Container>
+    </div>
   );
 };
 

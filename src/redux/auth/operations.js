@@ -11,7 +11,7 @@ const removeToken = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-export const signUp = createAsyncThunk(
+export const logIn = createAsyncThunk(
   'auth/logIn',
   async (userData, thunkAPI) => {
     try {
@@ -24,7 +24,7 @@ export const signUp = createAsyncThunk(
   }
 );
 
-export const logIn = createAsyncThunk(
+export const signUp = createAsyncThunk(
   'auth/signUp',
   async (userData, thunkAPI) => {
     try {
@@ -50,12 +50,12 @@ export const refreshAuth = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    const presistedToken = stste.auth.token;
-    if (!presistedToken) {
+    const persistedToken = state.auth.token;
+    if (!persistedToken) {
       return thunkAPI.rejectWithValue('User is not found');
     }
     try {
-      setToken(presistedToken);
+      setToken(persistedToken);
       const response = await axios.get('user/current');
       return response.data;
     } catch (error) {

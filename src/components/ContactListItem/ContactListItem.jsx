@@ -1,8 +1,8 @@
 import {} from './ContactListItem.styled';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
-import { selectVisibleContacts } from 'redux/selectors';
+import { selectVisibleContacts } from 'redux/contacts/selectors';
 
 const ContactListItem = () => {
   const dispatch = useDispatch();

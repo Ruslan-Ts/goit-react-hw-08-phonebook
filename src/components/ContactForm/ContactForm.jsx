@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import {} from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import Notiflix from 'notiflix';
-import { selectContactsList } from 'redux/selectors';
+import { selectContactsList } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');

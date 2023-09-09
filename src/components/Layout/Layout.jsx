@@ -1,26 +1,27 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { StyledLink } from './Layout.styled';
 import Loader from 'components/Loader';
-import { NavContainer, PageBox } from './Layout.styled';
 import UserMenu from 'components/UserMenu/UserMenu';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 const Layout = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <body>
-      <PageBox>
+      <div>
         <header>
-          <NavContainer>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/login">Login</StyledLink>
-            <StyledLink to="/register">Register</StyledLink>
-          </NavContainer>
-          {true ? <UserMenu /> : <></>}
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </nav>
+          {isLoggedIn ? <UserMenu /> : <></>}
         </header>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-      </PageBox>
+      </div>
     </body>
   );
 };
