@@ -4,14 +4,15 @@ import { selectUser } from 'redux/auth/selectors';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-  const user = useSelector(selectUser.name);
-  const email = useSelector(selectUser.email);
+  const user = useSelector(selectUser);
+  console.log(user);
 
   return (
     <div>
-      <p>{user}</p>
-      <p>{email}</p>
-      <button type="button" onClick={() => dispatch(logOut)}>
+      <p>Welcome</p>
+      <p>{user.name}</p>
+      <p>{user.email}</p>
+      <button type="button" onClick={() => dispatch(logOut())}>
         Logout
       </button>
     </div>

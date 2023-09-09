@@ -13,13 +13,13 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(logOut.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
-        state.token = payload.token;
-        state.isLoggedIn = true;
+      .addCase(logOut.fulfilled, state => {
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
       })
       .addCase(refreshAuth.fulfilled, (state, { payload }) => {
-        state.user = payload.user;
+        state.user = payload;
         state.isRefreshing = false;
         state.isLoggedIn = true;
       })

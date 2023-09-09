@@ -13,10 +13,19 @@ const Layout = () => {
         <header>
           <nav>
             <Link to="/">Home</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
           </nav>
-          {isLoggedIn ? <UserMenu /> : <></>}
+          {isLoggedIn ? (
+            <>
+              <Link to="/contacts">Contacts</Link>
+              <UserMenu />
+            </>
+          ) : (
+            <>
+              {' '}
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Register</Link>
+            </>
+          )}
         </header>
         <Suspense fallback={<Loader />}>
           <Outlet />

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/operations';
 
-const Register = () => {
+const SignUp = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -44,4 +44,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;

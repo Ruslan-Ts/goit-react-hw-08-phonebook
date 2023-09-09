@@ -7,7 +7,7 @@ import { selectContactsList } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const dispatch = useDispatch();
   const contacts = useSelector(selectContactsList);
 
@@ -19,7 +19,7 @@ const ContactForm = () => {
         break;
 
       case 'number':
-        setPhone(value);
+        setNumber(value);
         break;
 
       default:
@@ -40,7 +40,9 @@ const ContactForm = () => {
       Notiflix.Notify.failure(`Name ${[name]} is already exist`);
       return;
     } else if (
-      contacts.some(contact => contact.phone === e.target.elements.number.value)
+      contacts.some(
+        contact => contact.number === e.target.elements.number.value
+      )
     ) {
       Notiflix.Notify.failure(
         `Number ${e.target.elements.number.value} is already exist`
@@ -49,13 +51,15 @@ const ContactForm = () => {
     }
     dispatch(
       addContact({
-        name: name,
-        phone: phone,
+        name: e.target.elements.name.value,
+        phone: e.target.elements.number.value,
       })
     );
+    console.log(name);
+    console.log(number);
     Notiflix.Notify.success('Contact added');
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -83,7 +87,7 @@ const ContactForm = () => {
           required
           placeholder="Enter phone number"
           onChange={handleInputChange}
-          value={phone}
+          value={number}
         />
       </label>
 
