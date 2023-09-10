@@ -1,10 +1,10 @@
+import { Container, Text } from './Pages.styled';
+
 const NotFound = () => (
-  <div>
-    <br />
-    <br />
-    <br />
-    <h1>Page not found</h1>
-  </div>
+  <Container>
+    <Text>Page not found</Text>
+    <img style={{ height: '100%' }} src="/src/img/noFonnd.png" alt="404" />
+  </Container>
 );
 
 export default NotFound;

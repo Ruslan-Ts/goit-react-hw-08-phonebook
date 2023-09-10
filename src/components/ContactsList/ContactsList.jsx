@@ -3,7 +3,7 @@ import ContactListItem from '../ContactListItem/ContactListItem';
 
 const ContactsList = () => {
   return (
-    <ul>
+    <ul style={{ listStyle: 'none' }}>
       <ContactListItem />
     </ul>
   );

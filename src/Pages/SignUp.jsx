@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/operations';
+import { Button, Container, Input, StyledForm, Text } from './Pages.styled';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,10 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h1>Registration</h1>
-      <form onSubmit={handleSubmit}>
-        <input
+    <Container>
+      <Text>Registration</Text>
+      <StyledForm onSubmit={handleSubmit}>
+        <Input
           type="text"
           name="name"
           placeholder="Enter your name"
@@ -28,14 +29,14 @@ const SignUp = () => {
           required
           minLength={3}
         />
-        <input
+        <Input
           autoComplete="off"
           type="email"
           name="email"
           placeholder="Enter email"
           required
         />
-        <input
+        <Input
           type="password"
           name="password"
           placeholder="Enter password"
@@ -43,9 +44,9 @@ const SignUp = () => {
           required
           minLength={8}
         />
-        <button type="submit">Register</button>
-      </form>
-    </div>
+        <Button type="submit">Register</Button>
+      </StyledForm>
+    </Container>
   );
 };
 

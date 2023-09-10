@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
+import { Button, Container, Text, UserBox } from './UserMenu.styled';
+import { VscAccount } from 'react-icons/vsc';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -8,13 +10,16 @@ const UserMenu = () => {
   console.log(user);
 
   return (
-    <div>
-      <p>Welcome</p>
-      <p>{user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
+    <Container>
+      <Text>Welcome</Text>
+      <UserBox style={{ display: 'flex' }}>
+        <VscAccount />
+        <Text>{user.name}</Text>
+      </UserBox>
+      <Button type="button" onClick={() => dispatch(logOut())}>
         Logout
-      </button>
-    </div>
+      </Button>
+    </Container>
   );
 };
 

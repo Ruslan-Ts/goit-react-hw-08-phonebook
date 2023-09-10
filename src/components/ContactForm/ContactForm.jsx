@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {} from './ContactForm.styled';
+import { Button, Input, StyledForm } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import Notiflix from 'notiflix';
@@ -61,10 +61,9 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <label>
-        Name
-        <input
+        <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -76,8 +75,7 @@ const ContactForm = () => {
         />
       </label>
       <label>
-        Number
-        <input
+        <Input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -89,8 +87,8 @@ const ContactForm = () => {
         />
       </label>
 
-      <button type="submit">Add contact</button>
-    </form>
+      <Button type="submit">Add contact</Button>
+    </StyledForm>
   );
 };
 

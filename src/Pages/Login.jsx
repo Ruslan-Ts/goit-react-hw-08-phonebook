@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { Button, Container, Input, StyledForm, Text } from './Pages.styled';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -16,20 +17,20 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="Enter email" required />
-        <input
+    <Container>
+      <Text>Login</Text>
+      <StyledForm onSubmit={handleSubmit}>
+        <Input type="email" name="email" placeholder="Enter email" required />
+        <Input
           type="password"
           name="password"
           placeholder="Enter password"
           required
           minLength={8}
         />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+        <Button type="submit">Login</Button>
+      </StyledForm>
+    </Container>
   );
 };
 

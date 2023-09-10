@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
+import { Container, Text, TextSmall } from './Pages.styled';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -15,22 +16,22 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>PhoneBook</h1>
+    <Container>
+      <Text>Phonebook</Text>
       <ContactForm />
 
-      <div>
+      <Container>
         {isLoading && !error && <b>Loading...</b>}
         {error && <p>Oops, something went wrong</p>}
         {contactsArr.length > 0 && (
-          <div>
-            <h2>Contacts</h2>
+          <Container>
+            <TextSmall>Contacts</TextSmall>
             <Filter />
-          </div>
+          </Container>
         )}
         {contactsArr.length > 0 && <ContactsList />}
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };
 
