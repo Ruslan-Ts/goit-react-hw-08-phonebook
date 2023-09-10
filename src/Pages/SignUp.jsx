@@ -25,18 +25,23 @@ const SignUp = () => {
           name="name"
           placeholder="Enter your name"
           autoComplete="off"
+          required
+          minLength={3}
         />
         <input
           autoComplete="off"
           type="email"
           name="email"
           placeholder="Enter email"
+          required
         />
         <input
           type="password"
           name="password"
           placeholder="Enter password"
           autoComplete="off"
+          required
+          minLength={8}
         />
         <button type="submit">Register</button>
       </form>

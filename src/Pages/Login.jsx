@@ -19,8 +19,14 @@ const Login = () => {
     <div>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="Enter email" />
-        <input type="password" name="password" placeholder="Enter password" />
+        <input type="email" name="email" placeholder="Enter email" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          required
+          minLength={8}
+        />
         <button type="submit">Login</button>
       </form>
     </div>

@@ -32,34 +32,32 @@ const ContactForm = () => {
 
     if (
       contacts.some(
-        contact =>
-          contact.name.toLowerCase() ===
-          e.target.elements.name.value.toLowerCase()
+        contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
       Notiflix.Notify.failure(`Name ${[name]} is already exist`);
       return;
-    } else if (
-      contacts.some(
-        contact => contact.number === e.target.elements.number.value
-      )
-    ) {
-      Notiflix.Notify.failure(
-        `Number ${e.target.elements.number.value} is already exist`
-      );
+    } else if (contacts.some(contact => contact.number === number)) {
+      Notiflix.Notify.failure(`Number ${number} is already exist`);
       return;
     }
     dispatch(
       addContact({
-        name: e.target.elements.name.value,
-        phone: e.target.elements.number.value,
+        name,
+        number,
       })
-    );
-    console.log(name);
-    console.log(number);
-    Notiflix.Notify.success('Contact added');
+    )
+      .unwrap()
+      .than(() => {
+        Notiflix.Notify.success('Contact added');
+      })
+      .catch(() => {
+        Notiflix.Notify.failure('Something went wrong :(');
+      });
+
     setName('');
     setNumber('');
+    e.target.reset();
   };
 
   return (
