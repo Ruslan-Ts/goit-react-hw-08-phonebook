@@ -1,11 +1,21 @@
-import {} from './ContactsList.styled';
+import { Table, TableBody, TableCell, TableHead } from './ContactsList.styled';
 import ContactListItem from '../ContactListItem/ContactListItem';
+import { FaTrashAlt } from 'react-icons/fa';
 
 const ContactsList = () => {
   return (
-    <ul style={{ listStyle: 'none' }}>
-      <ContactListItem />
-    </ul>
+    <Table>
+      <TableHead>
+        <TableCell>Name</TableCell>
+        <TableCell>Number</TableCell>
+        <TableCell>
+          <FaTrashAlt />
+        </TableCell>
+      </TableHead>
+      <TableBody>
+        <ContactListItem />
+      </TableBody>
+    </Table>
   );
 };
 

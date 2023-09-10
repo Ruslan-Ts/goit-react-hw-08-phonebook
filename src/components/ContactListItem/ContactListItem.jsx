@@ -1,4 +1,4 @@
-import {} from './ContactListItem.styled';
+import { Button, TableCell, TableLine } from './ContactListItem.styled';
 import { deleteContact } from 'redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import Notiflix from 'notiflix';
@@ -15,12 +15,13 @@ const ContactListItem = () => {
 
   return visibleContacts.map(({ id, name, number }) => {
     return (
-      <li key={id}>
-        {name}: {number}
-        <button type="button" onClick={() => handleDelete(id, name)}>
+      <TableLine key={id}>
+        <TableCell>{name}</TableCell>
+        <TableCell>{number}</TableCell>
+        <Button type="button" onClick={() => handleDelete(id, name)}>
           Delete
-        </button>
-      </li>
+        </Button>
+      </TableLine>
     );
   });
 };

@@ -9,6 +9,8 @@ export const Container = styled.div`
 export const StyledForm = styled.form`
   overflow: hidden;
   align-items: center;
+  display: flex;
+  flex-direction: column;
   padding: 40px 30px 30px 30px;
   border-radius: 10px;
   width: 400px;
@@ -20,7 +22,7 @@ export const Input = styled.input`
   border-radius: 5px;
   font-size: 16px;
   background: white;
-  width: 100%;
+  width: 400px;
   border: 0;
   padding: 10px 10px;
   margin: 15px -10px;
@@ -31,7 +33,7 @@ export const Button = styled.button`
   color: #fff;
   font-size: 16px;
   /* text-transform: uppercase; */
-  width: 100px;
+  width: 130px;
   border: 0;
   padding: 10px 0;
   margin-top: 10px;
@@ -39,6 +41,8 @@ export const Button = styled.button`
   border-radius: 5px;
   background-color: #3f51b5;
   transition: background-color 300ms;
+  display: flex;
+  justify-content: space-around;
 
   &:hover,
   &:focus {

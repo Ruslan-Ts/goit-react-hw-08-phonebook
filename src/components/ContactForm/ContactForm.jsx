@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import Notiflix from 'notiflix';
 import { selectContactsList } from 'redux/contacts/selectors';
+import { FaPlus } from 'react-icons/fa';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -87,7 +88,10 @@ const ContactForm = () => {
         />
       </label>
 
-      <Button type="submit">Add contact</Button>
+      <Button type="submit">
+        <FaPlus />
+        Add contact
+      </Button>
     </StyledForm>
   );
 };
