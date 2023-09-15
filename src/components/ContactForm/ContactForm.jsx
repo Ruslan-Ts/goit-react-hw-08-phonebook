@@ -87,7 +87,6 @@ const ContactForm = () => {
           value={number}
         />
       </label>
-
       <Button type="submit">
         <FaPlus />
         Add contact
