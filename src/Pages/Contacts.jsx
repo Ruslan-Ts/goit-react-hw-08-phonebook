@@ -6,6 +6,7 @@ import { selectContacts } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
 import { Container, Text, TextSmall } from './Pages.styled';
+import Loader from 'components/Loader';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Contacts = () => {
       <ContactForm />
 
       <Container>
-        {isLoading && !error && <b>Loading...</b>}
+        {isLoading && !error && <Loader />}
         {error && <p>Oops, something went wrong</p>}
         {contactsArr.length > 0 && (
           <Container>

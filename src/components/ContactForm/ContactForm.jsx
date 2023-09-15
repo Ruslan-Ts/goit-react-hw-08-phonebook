@@ -47,14 +47,15 @@ const ContactForm = () => {
         name,
         number,
       })
-    )
-      .unwrap()
-      .than(() => {
-        Notiflix.Notify.success('Contact added');
-      })
-      .catch(() => {
-        Notiflix.Notify.failure('Something went wrong :(');
-      });
+    );
+    // .unwrap()
+    // .than(() => {
+    //   Notiflix.Notify.success('Contact added');
+    // })
+    // .catch(() => {
+    //   Notiflix.Notify.failure('Something went wrong :(');
+    // });
+    Notiflix.Notify.success(`Contact ${name} added`);
 
     setName('');
     setNumber('');

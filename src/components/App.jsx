@@ -24,7 +24,17 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader />
+    <div
+      style={{
+        paddingTop: '150',
+        display: 'flex',
+        alignItems: 'center',
+        margin: 'auto',
+        textAlign: 'center',
+      }}
+    >
+      <Loader />
+    </div>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
