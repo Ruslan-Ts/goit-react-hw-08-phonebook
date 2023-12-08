@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrest_api_phonebook=self.webpackChunkrest_api_phonebook||[]).push([[29],{5029:function(n,e,s){s.r(e);var o=s(5570),t=s(184);e.default=function(){return(0,t.jsxs)(o.W2,{children:[(0,t.jsx)(o.xv,{children:"Page not found"}),(0,t.jsx)("img",{style:{height:"100%"},src:"/src/img/noFonnd.png",alt:"404"})]})}}}]);
+//# sourceMappingURL=29.abbe1861.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrest_api_phonebook=self.webpackChunkrest_api_phonebook||[]).push([[6],{3006:function(e,n,s){s.r(n);var r=s(3728),i=s(5570),t=s(184);n.default=function(){return(0,t.jsx)(t.Fragment,{children:(0,t.jsxs)("div",{style:{display:"flex",alignItems:"center",gap:10},children:[(0,t.jsx)(r.XCr,{size:40}),(0,t.jsx)(i.xv,{children:"Phonebook"})]})})}}}]);
+//# sourceMappingURL=6.4a330a7f.chunk.js.map
